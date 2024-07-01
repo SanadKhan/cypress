@@ -1,3 +1,4 @@
+import Header from '@/components/landing-page/header'
 import React from 'react'
 
 interface HomePageLayoutProps {
@@ -7,6 +8,7 @@ interface HomePageLayoutProps {
 const HomePageLayout: React.FC<HomePageLayoutProps> = ({ children }) => {
   return (
     <main>
+      <Header />
       { children }
     </main>
   )

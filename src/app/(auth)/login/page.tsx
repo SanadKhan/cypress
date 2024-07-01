@@ -37,6 +37,7 @@ const LoginPage = () => {
   const onSubmit: SubmitHandler<z.infer<typeof FormSchema>> = async (
     formData
   ) => {
+    console.log("onsubmit", formData)
     const { error } = await actionLoginUser(formData);
     if (error) {
       form.reset();
@@ -115,7 +116,7 @@ const LoginPage = () => {
             </FormItem>
           )}
         />
-        {submitError && <FormMessage>{submitError}</FormMessage>}
+        {/* {submitError && <FormMessage>{submitError}</FormMessage>} */}
         <Button
           type="submit"
           className="w-full p-6"
@@ -124,7 +125,7 @@ const LoginPage = () => {
         >
           {!isLoading ? 'Login' : <Loader />}
         </Button>
-        <span className="self-container">
+        <span className="self-center">
           Dont have an account?{' '}
           <Link
             href="/signup"

@@ -35,5 +35,6 @@ export async function actionSignUpUser({
       emailRedirectTo: `${process.env.NEXT_PUBLIC_SITE_URL}api/auth/callback`,
     },
   });
+  console.log("response from sign up", response)
   return response;
 }
