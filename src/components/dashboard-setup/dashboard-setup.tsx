@@ -67,7 +67,7 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
           .upload(`workspaceLogo.${workspaceUUID}`, file, {
             cacheControl: '3600',
             upsert: true,
-          });
+          }); 
         if (error) throw new Error('');
         filePath = data.path;
       } catch (error) {
@@ -137,8 +137,8 @@ const DashboardSetup: React.FC<DashboardSetupProps> = ({
           <div className="flex flex-col gap-4">
             <div
               className="flex
-            items-center
-            gap-4"
+              items-center
+              gap-4"
             >
               <div className="text-5xl">
                 <EmojiPicker getValue={(emoji) => setSelectedEmoji(emoji)}>

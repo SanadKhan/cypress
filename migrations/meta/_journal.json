@@ -15,6 +15,13 @@
       "when": 1713615580278,
       "tag": "0001_volatile_wasp",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "5",
+      "when": 1720286581278,
+      "tag": "0002_slow_stick",
+      "breakpoints": true
     }
   ]
 }
