@@ -1,5 +1,6 @@
 // import MobileSidebar from '@/components/sidebar/mobile-sidebar';
-// import Sidebar from '@/components/sidebar/sidebar';
+import Sidebar from '@/components/sidebar/sidebar';
+// import { Sidebar } from 'lucide-react';
 import React from 'react';
 
 interface LayoutProps {
@@ -15,8 +16,8 @@ const Layout: React.FC<LayoutProps> = ({ children, params }) => {
       w-screen
   "
     >
-      {/* <Sidebar params={params} />
-      <MobileSidebar>
+      <Sidebar params={params} />
+      {/* <MobileSidebar>
         <Sidebar
           params={params}
           className="w-screen inline-block sm:hidden"
