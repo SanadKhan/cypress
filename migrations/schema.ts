@@ -53,7 +53,6 @@ export const subscriptions = pgTable("subscriptions", {
 	trialEnd: timestamp("trial_end", { withTimezone: true, mode: 'string' }).default(sql`now()`),
 });
 
-
 export const users = pgTable("users", {
 	id: uuid("id").primaryKey().notNull(),
 	fullName: text("full_name"),
@@ -82,7 +81,7 @@ export const files = pgTable("files", {
 	logo: text("logo"),
 	bannerUrl: text("banner_url"),
 	workspaceId: uuid("workspace_id").references(() => workspaces.id, { onDelete: "cascade" } ),
-	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).defaultNow().notNull(),
 	folderId: uuid("folder_id").references(() => folders.id, { onDelete: "cascade" } ),
 });
 
@@ -95,7 +94,7 @@ export const folders = pgTable("folders", {
 	logo: text("logo"),
 	bannerUrl: text("banner_url"),
 	workspaceId: uuid("workspace_id").references(() => workspaces.id, { onDelete: "cascade" } ),
-	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).defaultNow().notNull(),
 });
 
 export const products = pgTable("products", {
@@ -116,7 +115,7 @@ export const workspaces = pgTable("workspaces", {
 	inTrash: text("in_trash"),
 	logo: text("logo"),
 	bannerUrl: text("banner_url"),
-	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }),
+	createdAt: timestamp("created_at", { withTimezone: true, mode: 'string' }).defaultNow().notNull(),
 });
 
 export const collaborators = pgTable("collaborators", {

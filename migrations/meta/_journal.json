@@ -22,6 +22,20 @@
       "when": 1720286581278,
       "tag": "0002_slow_stick",
       "breakpoints": true
+    },
+    {
+      "idx": 3,
+      "version": "5",
+      "when": 1720451391756,
+      "tag": "0003_tricky_shriek",
+      "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "5",
+      "when": 1720452449794,
+      "tag": "0004_overrated_supreme_intelligence",
+      "breakpoints": true
     }
   ]
 }

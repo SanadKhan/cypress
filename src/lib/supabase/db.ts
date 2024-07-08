@@ -14,6 +14,7 @@ const client = postgres(connectionString as string, { prepare: false });
 
 const db = drizzle(client, { schema });
 
+
 const migrateDb = async () => {
   try {
     console.log("MIGRATING CLIENT...");
@@ -26,3 +27,20 @@ const migrateDb = async () => {
 migrateDb();
 
 export default db;
+
+
+// export default {
+//   async fetch(
+//     request: Request,
+//     env: Env,
+//     ctx: ExecutionContext
+//   ): Promise<Response> {
+//     const client = new Client({ connectionString: env.DATABASE_URL });
+//     await client.connect();
+//     const db = drizzle(client);
+//     const result = await db.select().from(...);
+//     // Clean up the client, ensuring we don't kill the worker before that is completed.
+//     ctx.waitUntil(client.end());
+//     return new Response(now);
+//   }
+// }

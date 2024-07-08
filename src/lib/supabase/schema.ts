@@ -14,7 +14,7 @@ export const workspaces = pgTable('workspaces', {
   createdAt: timestamp('created_at', {
     withTimezone: true,
     mode: 'string'
-  })
+  }).defaultNow().notNull()
 });
 
 export const folders = pgTable('folders', {
@@ -23,7 +23,6 @@ export const folders = pgTable('folders', {
   icondId: text('icon_id').notNull(),
   data: text('data'),
   inTrash: text('in_trash'),
-  logo: text('logo'),
   bannerUrl: text('banner_url'),
   workspaceId: uuid('workspace_id').references(() => workspaces.id, { 
     onDelete: 'cascade' 
@@ -31,7 +30,7 @@ export const folders = pgTable('folders', {
   createdAt: timestamp('created_at', {
     withTimezone: true,
     mode: 'string'
-  })
+  }).defaultNow().notNull()
 })
 
 export const files = pgTable('files', {
@@ -40,7 +39,6 @@ export const files = pgTable('files', {
   icondId: text('icon_id').notNull(),
   data: text('data'),
   inTrash: text('in_trash'),
-  logo: text('logo'),
   bannerUrl: text('banner_url'),
   workspaceId: uuid('workspace_id').references(() => workspaces.id, { 
     onDelete: 'cascade' 
@@ -48,7 +46,7 @@ export const files = pgTable('files', {
   createdAt: timestamp('created_at', {
     withTimezone: true,
     mode: 'string'
-  }),
+  }).defaultNow().notNull(),
   folderId: uuid('folder_id').references(() => folders.id , {
     onDelete: 'cascade'
   })
